@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment-4</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Outfit:wght@100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body class="bg-[#F8FAFC]">
+    <header class="md:w-9/12 mx-auto w-11/12">
+        <h2 class="font-bold text-3xl py-3 md:pt-9">Job Application Tracker</h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-5 ">
+            <div id="cart-1" class="bg-white p-5 rounded shadow md:my-5">
+                <h1>Total </h1>
+                <p id="allCount">8</p>
+            </div>
+            <div id="cart-2" class="bg-white p-5 rounded shadow md:my-5">
+                <h1>Inteview</h1>
+                <p id="interviewCount">0</p>
+            </div>
+            <div id="cart-3" class="bg-white p-5 rounded shadow mb-2 md:my-5">
+                <h1>Rejected</h1>
+                <p id="rejectCount">0</p>
+            </div>
+        </div>
+    </header>
+    <hr class="text-[#E6E7E9] md:w-9/12 my-5 mx-auto">
+    <main>
+        <section class="available-jobs md:w-9/12 mx-auto w-11/12">
+            <div class="flex justify-between items-center">
+                <h2 class="font-bold text-3xl my-3 ">Available Jobs</h2>
+                <p class="font-semibold"><span id="jobCount" class="pr-1"></span>8 Jobs</p>
+            </div>
+
+            <div class="flex gap-3 my-5">
+                <button id="all-jobs-btn" class="tab btn bg-blue-600 text-white px-[32px]" data-tab="all">All</button>
+                
+                <button id="all-interviews-btn" class="tab btn bg-gray-200 text-gray-600"
+                    deta-tab="interview">Interview</button>
+                <button id="all-rejected-btn" class="tab btn bg-gray-200 text-gray-600"
+                    deta-tab="rejected">Rejected</button>
+            </div>
+        </section>
+
+        <section class="available-jobs md:w-9/12 mx-auto w-11/12">
+            <div id="all-jobs-container" class="">
+
+            </div>
+
+            <div id="empty-state" class="hidden text-center md:w-5/12 mx-auto">
+                <img class="md:w-4/12 mx-auto mb-3" src="./img/jobs.png" alt="">
+                <h3>No jobs available</h3>
+                <p>Check back soon for new job opportunities</p>
+            </div>
+
+        </section>
+    </main>
+    <script src="./p.js"></script>
+</body>
