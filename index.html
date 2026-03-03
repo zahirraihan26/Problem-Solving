@@ -4,67 +4,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assignment-4</title>
+    <title>Job Application Tracker</title>
+
+    <!-- DaisyUI + Tailwind -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Outfit:wght@100..900&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
 </head>
 
-<body class="bg-[#F8FAFC]">
-    <header class="md:w-9/12 mx-auto w-11/12">
-        <h2 class="font-bold text-3xl py-3 md:pt-9">Job Application Tracker</h2>
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-5 ">
-            <div id="cart-1" class="bg-white p-5 rounded shadow md:my-5">
-                <h1>Total </h1>
-                <p id="allCount">8</p>
-            </div>
-            <div id="cart-2" class="bg-white p-5 rounded shadow md:my-5">
-                <h1>Inteview</h1>
-                <p id="interviewCount">0</p>
-            </div>
-            <div id="cart-3" class="bg-white p-5 rounded shadow mb-2 md:my-5">
-                <h1>Rejected</h1>
-                <p id="rejectCount">0</p>
+<body class="bg-gradient-to-br from-slate-100 to-slate-200 min-h-screen font-['Inter']">
+
+    <!-- HEADER -->
+    <header class="md:w-9/12 mx-auto w-11/12 pt-10">
+        <div class="bg-white rounded-2xl shadow-lg p-8">
+            <h2 class="font-bold text-4xl text-slate-800 mb-6">
+                <i class="fa-solid fa-briefcase text-blue-600 mr-2"></i>
+                Job Application Tracker
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+                <div class="bg-blue-50 p-6 rounded-xl text-center shadow-sm">
+                    <h1 class="text-gray-600 font-semibold">Total Jobs</h1>
+                    <p id="allCount" class="text-3xl font-bold text-blue-600 mt-2">8</p>
+                </div>
+
+                <div class="bg-green-50 p-6 rounded-xl text-center shadow-sm">
+                    <h1 class="text-gray-600 font-semibold">Interview</h1>
+                    <p id="interviewCount" class="text-3xl font-bold text-green-600 mt-2">2</p>
+                </div>
+
+                <div class="bg-red-50 p-6 rounded-xl text-center shadow-sm">
+                    <h1 class="text-gray-600 font-semibold">Rejected</h1>
+                    <p id="rejectCount" class="text-3xl font-bold text-red-600 mt-2">1</p>
+                </div>
+
             </div>
         </div>
     </header>
-    <hr class="text-[#E6E7E9] md:w-9/12 my-5 mx-auto">
-    <main>
-        <section class="available-jobs md:w-9/12 mx-auto w-11/12">
-            <div class="flex justify-between items-center">
-                <h2 class="font-bold text-3xl my-3 ">Available Jobs</h2>
-                <p class="font-semibold"><span id="jobCount" class="pr-1"></span>8 Jobs</p>
+
+    <!-- MAIN -->
+    <main class="md:w-9/12 mx-auto w-11/12 mt-10">
+
+        <!-- Section Header -->
+        <div class="flex flex-col md:flex-row justify-between md:items-center mb-6">
+            <h2 class="font-bold text-3xl text-slate-800">
+                Available Jobs
+            </h2>
+            <p class="font-semibold text-gray-600 mt-2 md:mt-0">
+                <span id="jobCount" class="text-blue-600 font-bold">8</span> Jobs
+            </p>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="flex gap-3 flex-wrap mb-8">
+            <button class="btn rounded-full bg-blue-600 text-white hover:bg-blue-700 px-8">
+                All
+            </button>
+
+            <button class="btn rounded-full bg-gray-200 text-gray-700 hover:bg-green-100 px-8">
+                Interview
+            </button>
+
+            <button class="btn rounded-full bg-gray-200 text-gray-700 hover:bg-red-100 px-8">
+                Rejected
+            </button>
+        </div>
+
+        <!-- Job Cards -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <!-- Card 1 -->
+            <div class="bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition duration-300">
+                <h3 class="text-xl font-bold text-slate-800">Frontend Developer</h3>
+                <p class="text-gray-500 mt-1">Tech Solutions Ltd</p>
+
+                <div class="flex justify-between items-center mt-4">
+                    <span class="badge badge-success">Interview</span>
+                    <button class="btn btn-sm btn-outline btn-primary">Details</button>
+                </div>
             </div>
 
-            <div class="flex gap-3 my-5">
-                <button id="all-jobs-btn" class="tab btn bg-blue-600 text-white px-[32px]" data-tab="all">All</button>
-                
-                <button id="all-interviews-btn" class="tab btn bg-gray-200 text-gray-600"
-                    deta-tab="interview">Interview</button>
-                <button id="all-rejected-btn" class="tab btn bg-gray-200 text-gray-600"
-                    deta-tab="rejected">Rejected</button>
-            </div>
-        </section>
+            <!-- Card 2 -->
+            <div class="bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition duration-300">
+                <h3 class="text-xl font-bold text-slate-800">Backend Developer</h3>
+                <p class="text-gray-500 mt-1">Code Factory</p>
 
-        <section class="available-jobs md:w-9/12 mx-auto w-11/12">
-            <div id="all-jobs-container" class="">
-
+                <div class="flex justify-between items-center mt-4">
+                    <span class="badge badge-error">Rejected</span>
+                    <button class="btn btn-sm btn-outline btn-primary">Details</button>
+                </div>
             </div>
 
-            <div id="empty-state" class="hidden text-center md:w-5/12 mx-auto">
-                <img class="md:w-4/12 mx-auto mb-3" src="./img/jobs.png" alt="">
-                <h3>No jobs available</h3>
-                <p>Check back soon for new job opportunities</p>
+            <!-- Card 3 -->
+            <div class="bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition duration-300">
+                <h3 class="text-xl font-bold text-slate-800">UI/UX Designer</h3>
+                <p class="text-gray-500 mt-1">Creative Studio</p>
+
+                <div class="flex justify-between items-center mt-4">
+                    <span class="badge badge-warning">Pending</span>
+                    <button class="btn btn-sm btn-outline btn-primary">Details</button>
+                </div>
             </div>
 
-        </section>
+        </div>
+
+        <!-- Empty State -->
+        <div id="empty-state"
+            class="hidden text-center bg-white p-10 rounded-2xl shadow-lg md:w-6/12 mx-auto mt-10">
+            <img class="w-32 mx-auto mb-4" src="./img/jobs.png" alt="">
+            <h3 class="text-xl font-semibold text-gray-700">No jobs available</h3>
+            <p class="text-gray-500 mt-2">Check back soon for new job opportunities</p>
+        </div>
+
     </main>
-    <script src="./p.js"></script>
+
 </body>
+
+</html>
